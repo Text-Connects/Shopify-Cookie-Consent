@@ -1,0 +1,21 @@
+{{ 'cookieconsent.min.js' | asset_url | script_tag }}
+{{ 'cookieconsent.min.css' | asset_url | stylesheet_tag }}
+<script>
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "{{ settings.cookie_consent_background }}",
+      "text": "{{ settings.cookie_consent_text }}"
+    },
+    "button": {
+      "background": "{{ settings.cookie_consent_button_background }}",
+      "text": "{{ settings.cookie_consent_button_text }}",
+      "border": "{{ settings.cookie_consent_border_color }}"
+    }
+  },
+  "content": {
+    "href": "{{ settings.cookie_consent_url }}"
+  }
+})});
+</script>
